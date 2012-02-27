@@ -8,9 +8,9 @@ sends it to monupco.com.
 Installing on your dotCloud application
 ----------------------------------------
 
-Create an account at <http://monupco.com>
+Create an account at http://monupco.com
 
-Add a dependency in your requirements.txt file
+Add a dependency in your `requirements.txt` file
 
 ::
 
@@ -20,7 +20,7 @@ Enable the registration script in your postinstall hook. **Note:**
 If you are using an "approot" your `postinstall` script should be in the 
 directory pointed by the “approot” directive of your `dotcloud.yml`.
 For more information about `postinstall` turn to 
-[dotCloud documentation](http://docs.dotcloud.com/guides/postinstall/).
+http://docs.dotcloud.com/guides/postinstall/.
 
 If a file named `postinstall` doesn't already exist, create it and add the following:
 
@@ -38,10 +38,11 @@ Make `postinstall` executable
 Commit your changes (if using git):
 
 ::
+
         git add .
         git commit -m "enable monupco registration"
 
-Set your monupco user id. You can get it from <https://monupco-otb.rhcloud.com/profiles/mine/>.
+Set your monupco user id. You can get it from https://monupco-otb.rhcloud.com/profiles/mine/.
 
 ::
 
@@ -54,5 +55,5 @@ Then push your application to dotCloud
 
         dotcloud push
 
-That's it, you can now checkout your application statistics at
-<http://monupco.com>
+That's it, you can now check your application statistics at
+http://monupco.com
