@@ -53,7 +53,7 @@ Then push your application to dotCloud
 
 ::
 
-        dotcloud push
+        dotcloud push <app name>
 
 That's it, you can now check your application statistics at
 http://monupco.com
