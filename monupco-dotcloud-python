@@ -24,7 +24,6 @@
 #
 #####################################################################################
 
-import os
 import sys
 import json
 import urllib
@@ -33,12 +32,16 @@ from monupco_dcp import version
 from exceptions import BaseException
 from pip.util import get_installed_distributions
 
+# load dotCloud environment
+with open('/home/dotcloud/environment.json') as f:
+  env = json.load(f)
+
 data = {
-    'user_id'    : int(os.environ['MONUPCO_USER_ID']),
-    'app_name'   : os.environ['DOTCLOUD_PROJECT'] + '.' + os.environ['DOTCLOUD_SERVICE_NAME'],
-    'app_uuid'   : os.environ['DOTCLOUD_WWW_HTTP_HOST'],
+    'user_id'    : int(env['MONUPCO_USER_ID']),
+    'app_name'   : env['DOTCLOUD_PROJECT'] + '.' + env['DOTCLOUD_SERVICE_NAME'],
+    'app_uuid'   : env['DOTCLOUD_WWW_HTTP_HOST'],
     'app_type'   : 'python',
-    'app_url'    : os.environ['DOTCLOUD_WWW_HTTP_URL'],
+    'app_url'    : env['DOTCLOUD_WWW_HTTP_URL'],
     'app_vendor' : 1, # dotCloud
     'pkg_type'   : 0, # Python PyPI
     'installed'  : [],
