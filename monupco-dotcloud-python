@@ -59,5 +59,5 @@ if (response.status != 200) or (not response.getheader('Content-type').startswit
     raise BaseException('Communication failed - %s' % response.read())
 
 result = json.loads(response.read())
-print result['message']
+print "Monupco: " + result['message']
 sys.exit(result['exit_code'])
