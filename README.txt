@@ -14,7 +14,7 @@ Add a dependency in your `requirements.txt` file
 
 ::
 
-        monupco-dotcloud-python
+        echo monupco-dotcloud-python >> requirements.txt
 
 Enable the registration script in your postinstall hook. **Note:**
 If you are using an "approot" your `postinstall` script should be in the 
