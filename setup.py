@@ -19,7 +19,7 @@ with open('README.txt') as file:
 setup(
     name=name,
     version=version,
-    description='monupco.com monitoring agent for dotCloud / Python applications',
+    description='monupco.com registartion agent for dotCloud / Python applications',
     author='Alexander Todorov',
     author_email='atodorov@nospam.otb.bg',
     url = 'http://github.com/monupco/monupco-dotcloud-python',

@@ -1,6 +1,8 @@
-This is a monitoring agent for monupco.com preconfigured for
-Python applications on dotCloud. It compiles a list of locally
-installed Python packages and sends it to monupco.com.
+This is a registration agent for monupco.com preconfigured for
+Python applications on DotCloud.
+
+It compiles a list of locally installed Python packages and
+sends it to monupco.com.
 
 
 Installing on your dotCloud application
