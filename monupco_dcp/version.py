@@ -1,2 +1,2 @@
 name = 'monupco-dotcloud-python'
-version='2.2'
+version='2.3'

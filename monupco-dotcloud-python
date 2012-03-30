@@ -40,7 +40,7 @@ data = {
     'user_id'    : int(env['MONUPCO_USER_ID']),
     'app_name'   : env['DOTCLOUD_PROJECT'] + '.' + env['DOTCLOUD_SERVICE_NAME'],
     'app_uuid'   : env['DOTCLOUD_WWW_HTTP_HOST'],
-    'app_type'   : 'python',
+    'app_type'   : 'Python',
     'app_url'    : env['DOTCLOUD_WWW_HTTP_URL'],
     'app_vendor' : 1, # dotCloud
     'pkg_type'   : 0, # Python PyPI
