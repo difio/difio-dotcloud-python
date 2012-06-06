@@ -39,7 +39,7 @@ with open('/home/dotcloud/environment.json') as f:
 data = {
     'user_id'    : int(env['MONUPCO_USER_ID']),
     'app_name'   : env['DOTCLOUD_PROJECT'] + '.' + env['DOTCLOUD_SERVICE_NAME'],
-    'app_uuid'   : env['DOTCLOUD_WWW_HTTP_HOST'],
+    'app_uuid'   : env['MONUPCO_UUID'],
     'app_type'   : 'Python',
     'app_url'    : env['DOTCLOUD_WWW_HTTP_URL'],
     'app_vendor' : 1, # dotCloud
