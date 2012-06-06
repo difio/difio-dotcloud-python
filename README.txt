@@ -51,6 +51,7 @@ Configure your Monupco userID. You can get it from https://monupco-otb.rhcloud.c
 Generate a unique identifier for this application and save the value as environmental variable.
 
 ::
+
         dotcloud var set <app name> MONUPCO_UUID=`uuidgen`
 
 Then push your application to dotCloud
