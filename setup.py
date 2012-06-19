@@ -11,7 +11,7 @@ def get_name_version():
         return (name, version)
     raise RuntimeError('No version info found.')
 
-with open('README.txt') as file:
+with open('README.rst') as file:
     long_description = file.read()
 
 (name, version) = get_name_version()
