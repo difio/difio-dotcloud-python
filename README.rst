@@ -1,20 +1,34 @@
-This is a registration agent for monupco.com preconfigured for
+This is a registration agent for Difio preconfigured for
 Python applications on DotCloud.
 
 It compiles a list of locally installed Python packages and
-sends it to monupco.com.
+sends it to http://www.dif.io.
 
 
 Installing on your dotCloud application
 ----------------------------------------
 
-Create an account at http://monupco.com
+Create an account at http://www.dif.io
+
+Create your Python application on dotCloud
+
+Configure your Difio userID. You can get it from https://difio-otb.rhcloud.com/profiles/mine/.
+
+::
+
+        dotcloud var set <app name> DIFIO_USER_ID=UserID
+
+Generate a unique identifier for this application and save the value as environmental variable.
+
+::
+
+        dotcloud var set <app name> DIFIO_UUID=`uuidgen`
 
 Add a dependency in your `requirements.txt` file
 
 ::
 
-        echo monupco-dotcloud-python >> requirements.txt
+        echo difio-dotcloud-python >> requirements.txt
 
 Enable the registration script in your postinstall hook. **Note:**
 If you are using an "approot" your `postinstall` script should be in the 
@@ -27,7 +41,7 @@ If a file named `postinstall` doesn't already exist, create it and add the follo
 ::
 
         #!/bin/sh
-        /home/dotcloud/env/bin/monupco-dotcloud-python
+        /home/dotcloud/env/bin/difio-dotcloud-python
 
 Make `postinstall` executable
 
@@ -40,19 +54,8 @@ Commit your changes (if using git):
 ::
 
         git add .
-        git commit -m "enable monupco registration"
+        git commit -m "enable Difio registration"
 
-Configure your Monupco userID. You can get it from https://monupco-otb.rhcloud.com/profiles/mine/.
-
-::
-
-        dotcloud var set <app name> MONUPCO_USER_ID=UserID
-
-Generate a unique identifier for this application and save the value as environmental variable.
-
-::
-
-        dotcloud var set <app name> MONUPCO_UUID=`uuidgen`
 
 Then push your application to dotCloud
 
@@ -66,7 +69,7 @@ If everything goes well you should see something like:
 
         19:55:10 [www.0] Running postinstall script...
         19:55:13 [www.0] response:200
-        19:55:13 [www.0] Monupco: Success, registered/updated application with id 10
+        19:55:13 [www.0] Difio: Success, registered/updated application with uuid ac5a3741-a564-4e59-aad2-3f51ea860521
 
 That's it, you can now check your application statistics at
-http://monupco.com
+http://www.dif.io

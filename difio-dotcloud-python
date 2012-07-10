@@ -28,7 +28,7 @@ import sys
 import json
 import urllib
 import httplib
-from monupco_dcp import version
+from difio_dcp import version
 from exceptions import BaseException
 from pip.util import get_installed_distributions
 
@@ -37,9 +37,9 @@ with open('/home/dotcloud/environment.json') as f:
   env = json.load(f)
 
 data = {
-    'user_id'    : int(env['MONUPCO_USER_ID']),
+    'user_id'    : int(env['DIFIO_USER_ID']),
     'app_name'   : env['DOTCLOUD_PROJECT'] + '.' + env['DOTCLOUD_SERVICE_NAME'],
-    'app_uuid'   : env['MONUPCO_UUID'],
+    'app_uuid'   : env['DIFIO_UUID'],
     'app_type'   : 'Python',
     'app_url'    : env['DOTCLOUD_WWW_HTTP_URL'],
     'app_vendor' : 1, # dotCloud
@@ -54,7 +54,7 @@ json_data = json.dumps(data)
 params = urllib.urlencode({'json_data' : json_data})
 headers = {"User-agent": "%s/%s" % (version.name, version.version)}
 
-conn = httplib.HTTPSConnection('monupco-otb.rhcloud.com')
+conn = httplib.HTTPSConnection('difio-otb.rhcloud.com')
 conn.request('POST', '/application/register/', params, headers)
 response = conn.getresponse()
 
@@ -62,5 +62,5 @@ if (response.status != 200) or (not response.getheader('Content-type').startswit
     raise BaseException('Communication failed - %s' % response.read())
 
 result = json.loads(response.read())
-print "Monupco: " + result['message']
+print "Difio: " + result['message']
 sys.exit(result['exit_code'])
