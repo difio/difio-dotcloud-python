@@ -1,2 +1,2 @@
 name = 'difio-dotcloud-python'
-version='2.6'
+version='2.6.1'
