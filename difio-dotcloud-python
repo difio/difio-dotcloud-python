@@ -41,7 +41,7 @@ data = {
     'app_name'   : env['DOTCLOUD_PROJECT'] + '.' + env['DOTCLOUD_SERVICE_NAME'],
     'app_uuid'   : env['DIFIO_UUID'],
     'app_type'   : 'python-%d.%d.%d' % (sys.version_info[0], sys.version_info[1], sys.version_info[2]),
-    'app_url'    : env['DOTCLOUD_WWW_HTTP_URL'],
+    'app_url'    : env['DOTCLOUD_' + env['DOTCLOUD_SERVICE_NAME'].upper() + '_HTTP_URL'],
     'app_vendor' : 1, # dotCloud
     'pkg_type'   : 0, # Python PyPI
     'installed'  : [],
